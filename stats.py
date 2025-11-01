@@ -10,7 +10,7 @@ def get_book_text(file_path):
 def char_count(text):
     # Convert the text string to all lowercase.
     shrunk_text = text.lower()
-    
+
     # Initialize a dictonary to hold all unique characters (key) and their count (Value).
     char_totals = {}
 
@@ -24,3 +24,13 @@ def char_count(text):
             char_totals[shrunk_text[x]] = 1
 
     return char_totals
+
+def sort_char_analysis(char_count):
+    sorted_dic = sorted(char_count.items(), key=lambda item: item[1],reverse=True)
+    
+    for x in range(len(sorted_dic)):
+        for i in range(1):
+            if sorted_dic[x][0].isalpha():
+                print(f"{sorted_dic[x][0]}: {sorted_dic[x][1]}")
+
+    return
